@@ -599,15 +599,18 @@
     </div>
   </div>
 
-  <footer>© Crispy G Tattoo is a subsidiary of NoahTGeyer LLC, a limited liability company organized and existing under the laws of the State of New York. All services provided by Crispy G Tattoo are rendered by NoahTGeyer LLC or its authorized representatives. NoahTGeyer LLC maintains all rights, title, and interest in the Crispy G Tattoo brand and associated intellectual property.<br><br><span onclick="showPage('careers')" style="cursor:pointer; text-decoration: underline; display:block; text-align:center;">Careers</span></footer>
-
   <!-- CAREERS -->
   <div class="page" id="page-careers">
     <div class="inner-page" style="display:flex; flex-direction:column; align-items:center; gap:40px;">
       <img src="/IMG_6756.jpg" alt="Careers" style="max-width:100%; height:auto;">
-      <p style="font-size:0.68rem; color:var(--muted); letter-spacing:0.14em; text-transform:uppercase; text-align:center; max-width:600px;">© Crispy G Tattoo is a subsidiary of NoahTGeyer LLC, a limited liability company organized and existing under the laws of the State of New York. All services provided by Crispy G Tattoo are rendered by NoahTGeyer LLC or its authorized representatives. NoahTGeyer LLC maintains all rights, title, and interest in the Crispy G Tattoo brand and associated intellectual property.</p>
+      <div style="font-size:0.68rem; color:var(--muted); letter-spacing:0.14em; text-transform:uppercase; text-align:center; max-width:700px; border-top:1px solid var(--border); padding-top:24px; width:100%;">
+        © Crispy G Tattoo is a subsidiary of NoahTGeyer LLC, a limited liability company organized and existing under the laws of the State of New York. All services provided by Crispy G Tattoo are rendered by NoahTGeyer LLC or its authorized representatives. NoahTGeyer LLC maintains all rights, title, and interest in the Crispy G Tattoo brand and associated intellectual property.<br><br>
+        <span onclick="showPage('careers')" style="cursor:pointer; text-decoration:underline; display:block; text-align:center;">Careers</span>
+      </div>
     </div>
   </div>
+
+  <footer id="site-footer">© Crispy G Tattoo is a subsidiary of NoahTGeyer LLC, a limited liability company organized and existing under the laws of the State of New York. All services provided by Crispy G Tattoo are rendered by NoahTGeyer LLC or its authorized representatives. NoahTGeyer LLC maintains all rights, title, and interest in the Crispy G Tattoo brand and associated intellectual property.<br><br><span onclick="showPage('careers')" style="cursor:pointer; text-decoration: underline; display:block; text-align:center;">Careers</span></footer>
 </div>
 
 <script>
@@ -621,7 +624,8 @@
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
     document.getElementById('page-' + name).classList.add('active');
-    document.getElementById('tab-' + name).classList.add('active');
+    if (document.getElementById('tab-' + name)) document.getElementById('tab-' + name).classList.add('active');
+    document.getElementById('site-footer').style.display = name === 'careers' ? 'none' : '';
   }
 
   function openPopup(e) {
