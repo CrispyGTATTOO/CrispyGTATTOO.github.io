@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=0.8">
 <title>Crispy G — Tattoo</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Manufacturing+Consent&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manufacturing+Consent&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #ffffff;
@@ -61,7 +63,7 @@
 
   #splash .splash-hint {
     margin-top: 24px;
- font-family: 'Manufacturing Consent', sans-serif;
+    font-family: 'Manufacturing Consent', sans-serif;
     font-size: 0.95rem;
     letter-spacing: 0.18em;
     color: var(--muted);
@@ -104,7 +106,7 @@
   }
 
   .brand-name {
- font-family: 'Manufacturing Consent', sans-serif;
+    font-family: 'Manufacturing Consent', sans-serif;
     font-size: 2rem;
     color: var(--fg);
   }
@@ -116,7 +118,7 @@
   }
 
   .nav-links a {
- font-family: 'Manufacturing Consent', sans-serif;
+    font-family: 'Manufacturing Consent', sans-serif;
     font-size: 1.15rem;
     color: var(--muted);
     text-decoration: none;
@@ -127,13 +129,101 @@
 
   .nav-links a:hover, .nav-links a.active { color: var(--fg); }
 
-  .page { display: none; padding: 64px 48px; max-width: 1200px; margin: 0 auto; animation: fadeIn 0.35s ease; }
+  .page { display: none; animation: fadeIn 0.35s ease; }
   .page.active { display: block; }
 
   @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
+  /* ── HOME PAGE ── */
+  #page-home {
+    padding: 0;
+  }
+
+  .home-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(100vh - 97px);
+  }
+
+  .home-hero-photo {
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    min-height: 500px;
+  }
+
+  .home-hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .home-photo-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    color: #ccc;
+  }
+
+  .home-photo-placeholder svg {
+    opacity: 0.35;
+  }
+
+  .home-photo-placeholder span {
+    font-family: 'Manufacturing Consent', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    color: #ccc;
+    text-transform: uppercase;
+  }
+
+  .home-hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 72px;
+    border-left: 1px solid var(--border);
+  }
+
+  .home-eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 28px;
+  }
+
+  .home-name {
+    font-family: 'Manufacturing Consent', sans-serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 400;
+    line-height: 1;
+    color: var(--fg);
+    margin-bottom: 28px;
+    white-space: nowrap;
+  }
+
+  .home-tagline {
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  /* ── OTHER PAGES ── */
+  .inner-page { padding: 64px 48px; max-width: 1200px; margin: 0 auto; }
+
   .page-title {
- font-family: 'Manufacturing Consent', sans-serif;
+    font-family: 'Manufacturing Consent', sans-serif;
     font-size: 3.2rem;
     margin-bottom: 8px;
   }
@@ -166,7 +256,7 @@
   .gallery-item:hover { opacity: 0.7; }
 
   .placeholder-text {
- font-family: 'Manufacturing Consent', sans-serif;
+    font-family: 'Manufacturing Consent', sans-serif;
     font-size: 0.85rem;
     color: #c0c0c0;
     text-align: center;
@@ -198,7 +288,7 @@
   .pay-icon { font-size: 2.2rem; margin-bottom: 16px; display: block; }
 
   .pay-label {
- font-family: 'Manufacturing Consent', sans-serif;
+    font-family: 'Manufacturing Consent', sans-serif;
     font-size: 1.7rem;
     display: block;
     margin-bottom: 8px;
@@ -243,7 +333,7 @@
   .contact-icon { font-size: 1.5rem; flex-shrink: 0; }
 
   .contact-label {
- font-family: 'Manufacturing Consent', sans-serif;
+    font-family: 'Manufacturing Consent', sans-serif;
     font-size: 1.4rem;
     display: block;
   }
@@ -294,7 +384,7 @@
   }
 
   .popup-title {
- font-family: 'Manufacturing Consent', sans-serif;
+    font-family: 'Manufacturing Consent', sans-serif;
     font-size: 2.6rem;
     margin-bottom: 6px;
   }
@@ -349,178 +439,163 @@
     text-transform: uppercase;
     margin-top: 80px;
   }
- @media (max-width: 768px) {
-  nav {
-    padding: 16px 24px;
-  }
-  
-  .nav-links {
-    gap: 8px;
-    font-size: 0.9rem;
-  }
-  
-  .page {
-    padding: 16px 16px;
-  }
-  
-  .page-title {
-    font-size: 1.5rem;
-  }
 
-  .brand-name {
-    font-size: 1.2rem;
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { gap: 8px; font-size: 0.9rem; }
+    .brand-name { font-size: 1.2rem; }
+
+    .home-hero { grid-template-columns: 1fr; min-height: auto; }
+    .home-hero-photo { min-height: 55vw; }
+    .home-hero-text { padding: 40px 24px; border-left: none; border-top: 1px solid var(--border); }
+    .home-name { font-size: clamp(2.2rem, 10vw, 4rem); }
+
+    .inner-page { padding: 16px 16px; }
+    .page-title { font-size: 1.5rem; }
+    .gallery-grid { gap: 12px; }
+    .payment-grid { grid-template-columns: 1fr; }
+    .contact-item { flex-direction: column; gap: 12px; }
+    .popup-box { width: 95%; padding: 32px 20px; }
+    #splash img { width: 240px; }
+
+    html { width: 100%; overflow-x: hidden; }
+    nav { width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; }
   }
-
-  .gallery-grid {
-    gap: 12px;
-  }
-
-  .payment-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-item {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .gallery-item {
-    margin-bottom: 12px;
-  }
-   .gallery-grid {
-  width: 100%;
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-.gallery-item img {
-  max-width: 100%;
-  height: auto;
-}
-
-  .popup-box {
-    width: 95%;
-    padding: 32px 20px;
-  }
-
-  #splash img {
-    width: 240px;
-  }
-   html {
-  width: 100%;
-  overflow-x: hidden;
-}
-
-nav {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-}
-}
 </style>
 </head>
 <body>
 
 <div id="splash">
-<img src="/IMG_6758.PNG" alt="Crispy G" onclick="enterSite()">
+  <img src="/IMG_6758.PNG" alt="Crispy G" onclick="enterSite()">
   <span class="splash-hint">Become Enlightened</span>
 </div>
 
 <div id="site">
   <nav>
-    <div class="brand" onclick="showPage('gallery')">
-<img src="/02d08f9cee9b8f6899c460307390bd72.jpg" alt="Crispy G">
+    <div class="brand" onclick="showPage('home')">
+      <img src="/02d08f9cee9b8f6899c460307390bd72.jpg" alt="Crispy G">
       <span class="brand-name">Crispy G</span>
     </div>
     <ul class="nav-links">
-      <li><a onclick="showPage('gallery')" id="tab-gallery" class="active">Gallery</a></li>
+      <li><a onclick="showPage('home')" id="tab-home" class="active">Home</a></li>
+      <li><a onclick="showPage('gallery')" id="tab-gallery">Gallery</a></li>
       <li><a onclick="showPage('payment')" id="tab-payment">Payment</a></li>
       <li><a onclick="showPage('contact')" id="tab-contact">Contact</a></li>
     </ul>
   </nav>
 
-  <div class="page active" id="page-gallery">
-    <p class="page-title">Gallery</p>
-    <p class="page-sub">Previous Work</p>
-<div class="gallery-grid">
-  <div class="gallery-item"><img src="/0881E14E-0E11-4382-B6A4-9A093997B7EE_1_105_c.jpeg" alt="Tattoo 1"></div>
-  <div class="gallery-item"><img src="/23F1551B-EF50-4C3A-B3B2-9E7600DA7183_1_105_c.jpeg" alt="Tattoo 2"></div>
-  <div class="gallery-item"><img src="/33C0C430-260E-4A32-8188-C3AE43A5D6FC_1_105_c.jpeg" alt="Tattoo 3"></div>
-  <div class="gallery-item"><img src="/4959F1CB-15D1-41B7-87D1-7D150F4CBF83_1_105_c.jpeg" alt="Tattoo 4"></div>
-  <div class="gallery-item"><img src="/44847140-A5F0-4236-AC27-5BBD1862A01A_1_105_c.jpeg" alt="Tattoo 5"></div>
-  <div class="gallery-item"><img src="/5B32CAA9-6EF8-42B8-8615-020A47940F9B_1_105_c.jpeg" alt="Tattoo 6"></div>
-  <div class="gallery-item"><img src="/78B1B33F-966D-43DC-8DF9-FFDA39F7C1AA_1_105_c.jpeg" alt="Tattoo 7"></div>
-  <div class="gallery-item"><img src="/7996F97B-1CA2-467E-A99B-6366E0A4429D.jpeg" alt="Tattoo 8"></div>
-  <div class="gallery-item"><img src="/F85872AB-2DFF-45AA-B6FE-C3D884316457_1_105_c.jpeg" alt="Tattoo 9"></div>
-</div>
- 
+  <!-- HOME -->
+  <div class="page active" id="page-home">
+    <div class="home-hero">
+      <!-- Left: photo -->
+      <div class="home-hero-photo">
+        <!-- Replace the div below with: <img src="/your-photo.jpg" alt="Crispy G"> -->
+        <div class="home-photo-placeholder">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="10" width="56" height="44" rx="2" stroke="#bbb" stroke-width="2"/>
+            <circle cx="22" cy="26" r="6" stroke="#bbb" stroke-width="2"/>
+            <path d="M4 44 L18 30 L28 42 L38 32 L60 54" stroke="#bbb" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+          <span>Insert Hero Photo</span>
+        </div>
+      </div>
+
+      <!-- Right: text -->
+      <div class="home-hero-text">
+        <h1 class="home-name">Crispy G</h1>
+        <p class="home-tagline">
+          Licensed Tattoo Artist<br>
+          Based in New York City
+        </p>
+      </div>
+    </div>
   </div>
 
+  <!-- GALLERY -->
+  <div class="page" id="page-gallery">
+    <div class="inner-page">
+      <p class="page-title">Gallery</p>
+      <p class="page-sub">Previous Work</p>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="/0881E14E-0E11-4382-B6A4-9A093997B7EE_1_105_c.jpeg" alt="Tattoo 1"></div>
+        <div class="gallery-item"><img src="/23F1551B-EF50-4C3A-B3B2-9E7600DA7183_1_105_c.jpeg" alt="Tattoo 2"></div>
+        <div class="gallery-item"><img src="/33C0C430-260E-4A32-8188-C3AE43A5D6FC_1_105_c.jpeg" alt="Tattoo 3"></div>
+        <div class="gallery-item"><img src="/4959F1CB-15D1-41B7-87D1-7D150F4CBF83_1_105_c.jpeg" alt="Tattoo 4"></div>
+        <div class="gallery-item"><img src="/44847140-A5F0-4236-AC27-5BBD1862A01A_1_105_c.jpeg" alt="Tattoo 5"></div>
+        <div class="gallery-item"><img src="/5B32CAA9-6EF8-42B8-8615-020A47940F9B_1_105_c.jpeg" alt="Tattoo 6"></div>
+        <div class="gallery-item"><img src="/78B1B33F-966D-43DC-8DF9-FFDA39F7C1AA_1_105_c.jpeg" alt="Tattoo 7"></div>
+        <div class="gallery-item"><img src="/7996F97B-1CA2-467E-A99B-6366E0A4429D.jpeg" alt="Tattoo 8"></div>
+        <div class="gallery-item"><img src="/F85872AB-2DFF-45AA-B6FE-C3D884316457_1_105_c.jpeg" alt="Tattoo 9"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAYMENT -->
   <div class="page" id="page-payment">
-    <p class="page-title">Payment</p>
-    <p class="page-sub">Deposits &amp; Balances</p>
-    <div class="payment-grid">
-      <a class="payment-card" href="https://account.venmo.com/u/noahtgeyer" target="_blank"
-        <span class="pay-icon">💸</span>
-        <span class="pay-label">Venmo</span>
-        <span class="pay-handle">@CrispyG</span>
-
-      <a class="payment-card" href="https://enroll.zellepay.com/" target="_blank"
-        <span class="pay-icon">⚡</span>
-        <span class="pay-label">Zelle</span>
-        <span class="pay-handle">@CrispyG</span>
-      </a>
+    <div class="inner-page">
+      <p class="page-title">Payment</p>
+      <p class="page-sub">Deposits &amp; Balances</p>
+      <div class="payment-grid">
+        <a class="payment-card" href="https://account.venmo.com/u/noahtgeyer" target="_blank" onclick="openPopup(event)">
+          <span class="pay-icon">💸</span>
+          <span class="pay-label">Venmo</span>
+          <span class="pay-handle">@noahtgeyer</span>
+        </a>
+        <a class="payment-card" href="https://enroll.zellepay.com/" target="_blank" onclick="openPopup(event)">
+          <span class="pay-icon">⚡</span>
+          <span class="pay-label">Zelle</span>
+          <span class="pay-handle">@CrispyG</span>
+        </a>
+      </div>
+      <p class="payment-note">Deposits are non-refundable. Balance due at appointment.</p>
     </div>
-    <p class="payment-note">Deposits are non-refundable. Balance due at appointment.</p>
   </div>
 
+  <!-- CONTACT -->
   <div class="page" id="page-contact">
-    <p class="page-title">Contact</p>
-    <p class="page-sub">Book an Appointment</p>
-    <div class="contact-list">
-      <a class="contact-item" href="https://instagram.com/crispiestg" target="_blank">
-        <span class="contact-icon">📷</span>
-        <div>
-          <span class="contact-label">Instagram</span>
-          <div class="contact-value">@crispiestg</div>
+    <div class="inner-page">
+      <p class="page-title">Contact</p>
+      <p class="page-sub">Book an Appointment</p>
+      <div class="contact-list">
+        <a class="contact-item" href="https://instagram.com/crispiestg" target="_blank">
+          <span class="contact-icon">📷</span>
+          <div>
+            <span class="contact-label">Instagram</span>
+            <div class="contact-value">@crispiestg</div>
+          </div>
+        </a>
+        <a class="contact-item" href="tel:+16462285611">
+          <span class="contact-icon">☎</span>
+          <div>
+            <span class="contact-label">Phone</span>
+            <div class="contact-value">(646)-228-5611</div>
+          </div>
+        </a>
+      </div>
+      <div style="margin-top: 52px;">
+        <p style="font-family: 'Manufacturing Consent', sans-serif; font-size: 1.4rem; margin-bottom: 24px;">Consent &amp; Service Agreement</p>
+        <div style="border: 1px solid #e0e0e0; padding: 32px 28px;">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScUZ4kMCxkbS4CqWlblkCgPRJv38Y4yqsRmFxfWqzuaRiyG9w/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
-      </a>
-      <a class="contact-item" href="tel:+16462285611">
-        <span class="contact-icon">☎</span>
-        <div>
-          <span class="contact-label">Phone</span>
-          <div class="contact-value">(646)-228-5611</div>
-        </div>
-      </a>
+      </div>
     </div>
- <div style="margin-top: 52px;">
-  <p style="font-family: 'Manufacturing Consent', sans-serif; font-size: 1.4rem; margin-bottom: 24px;">Consent & Service Agreement</p>
-  
-  <div style="border: 1px solid #e0e0e0; padding: 32px 28px;">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScUZ4kMCxkbS4CqWlblkCgPRJv38Y4yqsRmFxfWqzuaRiyG9w/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-  </div>
-</div>
-
   </div>
 
+  <!-- POPUP -->
   <div class="popup-overlay" id="popup" onclick="closePopupOutside(event)">
     <div class="popup-box">
       <button class="popup-close" onclick="closePopup()">✕</button>
-<img src="/02d08f9cee9b8f6899c460307390bd72.jpg" alt="Crispy G">
+      <img src="/02d08f9cee9b8f6899c460307390bd72.jpg" alt="Crispy G">
       <div class="popup-title">Crispy G</div>
       <div class="popup-sub">Select payment method</div>
       <div class="popup-links">
-        <a class="popup-link" href="https://venmo.com/" target="_blank">Venmo — @noahtgeyer</a>
+        <a class="popup-link" href="https://account.venmo.com/u/noahtgeyer" target="_blank">Venmo — @noahtgeyer</a>
         <a class="popup-link" href="https://enroll.zellepay.com/" target="_blank">Zelle — @CrispyG</a>
       </div>
     </div>
   </div>
 
-  <footer>©   Crispy G Tattoo is a subsidiary of NoahTGeyer LLC, a limited liability company organized and existing under the laws of the State of New York. All services provided by Crispy G Tattoo are rendered by NoahTGeyer LLC or its authorized representatives. NoahTGeyer LLC maintains all rights, title, and interest in the Crispy G Tattoo brand and associated intellectual property.
-  </p></footer>
+  <footer>© Crispy G Tattoo is a subsidiary of NoahTGeyer LLC, a limited liability company organized and existing under the laws of the State of New York. All services provided by Crispy G Tattoo are rendered by NoahTGeyer LLC or its authorized representatives. NoahTGeyer LLC maintains all rights, title, and interest in the Crispy G Tattoo brand and associated intellectual property.</footer>
 </div>
 
 <script>
