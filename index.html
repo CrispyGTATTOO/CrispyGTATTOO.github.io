@@ -149,7 +149,7 @@
 
   .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 3px;
   }
 
@@ -392,7 +392,7 @@
     <p class="page-title">Payment</p>
     <p class="page-sub">Deposits &amp; Balances</p>
     <div class="payment-grid">
-      <a class="payment-card" href="https://venmo.com/" target="_blank" onclick="openPopup(event)">
+      <a class="payment-card" href="https://account.venmo.com/u/noahtgeyer" target="_blank" onclick="openPopup(event)">
         <span class="pay-icon">💸</span>
         <span class="pay-label">Venmo</span>
         <span class="pay-handle">@CrispyG</span>
